@@ -11,13 +11,13 @@ class PaymentCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width/1.1,
       height: 80,
       child: Card(
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         child: Center(
           child: Wrap(
             alignment: WrapAlignment.center,
             spacing: 20,
             crossAxisAlignment: WrapCrossAlignment.center,
-            children:  [Icon(paymentIcon, size: 30, color: Colors.green,), Text(payment, style: TextStyle(
+            children:  [Icon(paymentIcon, size: 30, color: Colors.green,), Text(payment, style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold
             ),)],

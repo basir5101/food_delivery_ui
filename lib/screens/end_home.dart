@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/custom_widgets/heading_text.dart';
+import 'package:food_delivery_app/custom_widgets/theme_button.dart';
+import 'package:food_delivery_app/screens/dashboard.dart';
+import 'package:food_delivery_app/screens/home.dart';
 
 class EndHome extends StatelessWidget {
   const EndHome({Key? key}) : super(key: key);
@@ -7,13 +10,15 @@ class EndHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
+      body:  Column(
+        mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HeadingText(heading: "Your Profile Is Ready To Use")
+            Image.asset('assets/congrats.png'),
+            const HeadingText(heading: "Your Profile Is Ready To Use"),
+            const ThemeButton(btnText: 'Try Order', route: Dashboard()),
           ],
         ),
-      ),
+
     );
   }
 }

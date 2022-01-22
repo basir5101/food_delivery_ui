@@ -17,7 +17,7 @@ class SecondHome extends StatelessWidget {
           child: Column(
             children: [
               Image.asset('assets/second_home.png'),
-              HeadingText(heading: 'Food Ninja is Where Your Comfort Food Lives'),
+              const HeadingText(heading: 'Food Ninja is Where Your Comfort Food Lives'),
               const ParagraphText(paragraph: 'Enjoy a fast and smooth food delivery at your doorstep'),
               const ThemeButton(btnText: "Next", route: Signup()),
             ],

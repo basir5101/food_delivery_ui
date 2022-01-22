@@ -20,23 +20,23 @@ class AddLocation extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              HeadingText(heading: 'Set Your Location '),
-              ParagraphText(paragraph: "This data will be displayed in your account profile for security"),
+              const HeadingText(heading: 'Set Your Location '),
+              const ParagraphText(paragraph: "This data will be displayed in your account profile for security"),
               Padding(
-                padding: const EdgeInsets.all(18.0),
+                padding:  EdgeInsets.all(18.0),
                 child: Row(
-                  children: [
+                  children: const [
                     Icon(Icons.my_location),
                     ThirdHeading(heading: 'Your Location')
                     //Text('Your Location')
                   ],
                 ),
               ),
-              BrandButton(btnText: "Set Location", brandIcon: Icons.location_on),
-              SizedBox(
+              const BrandButton(btnText: "Set Location", brandIcon: Icons.location_on),
+              const SizedBox(
                 height: 100,
               ),
-              ThemeButton(btnText: 'Next', route: EndHome())
+              const ThemeButton(btnText: 'Next', route: EndHome())
             ],
           ),
         ),
