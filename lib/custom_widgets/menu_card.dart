@@ -25,12 +25,15 @@ class _MenuCardState extends State<MenuCard> {
     double width = MediaQuery.of(context).size.width;
     return Card(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-      width: width - 30,
-      child: Row(
+      padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        width: width - 30,
+        child: Row(
           children: [
-            Image.asset(widget.imagePath, width: width/5.5,),
+            Image.asset(
+              widget.imagePath,
+              width: width / 5.5,
+            ),
             SizedBox(
               width: width / 1.8,
               child: Column(
@@ -39,13 +42,13 @@ class _MenuCardState extends State<MenuCard> {
                   Text(
                     widget.menu,
                     style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     widget.restaurant,
-                    style: const TextStyle(color: Colors.grey, fontSize: 20),
+                    style: const TextStyle(color: Colors.grey, fontSize: 18),
                   )
                 ],
               ),
@@ -53,11 +56,14 @@ class _MenuCardState extends State<MenuCard> {
             SizedBox(
                 child: Text(
               widget.price,
-              style: TextStyle(color: ThemeColors().success, fontSize: 24,),
+              style: TextStyle(
+                color: ThemeColors().success,
+                fontSize: 24,
+              ),
             ))
           ],
+        ),
       ),
-    ),
-        ));
+    ));
   }
 }

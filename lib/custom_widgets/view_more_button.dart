@@ -10,15 +10,8 @@ class ViewMoreButton extends StatefulWidget {
 class _ViewMoreButtonState extends State<ViewMoreButton> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-          primary: Colors.transparent,
-          onSurface: Colors.transparent,
-          shadowColor: Colors.transparent,
+    return   const Text('View More', style: TextStyle(
+        fontWeight: FontWeight.bold, fontSize: 18, color: Color.fromARGB(255, 125, 54, 100)));
 
-      ),
-        onPressed: (){}, child: const Text('View More', style: TextStyle(
-        fontWeight: FontWeight.bold, fontSize: 20, color: Color.fromARGB(255, 125, 54, 100))),
-    );
   }
 }
