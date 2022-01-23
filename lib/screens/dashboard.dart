@@ -96,7 +96,7 @@ class _DashboardState extends State<Dashboard> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomMenuBar(),
+      bottomNavigationBar: const BottomMenuBar(),
     );
   }
 }

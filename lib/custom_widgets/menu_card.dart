@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/screens/order_details.dart';
 import 'package:food_delivery_app/utills/theme_colors.dart';
 
 class MenuCard extends StatefulWidget {
@@ -23,47 +24,52 @@ class _MenuCardState extends State<MenuCard> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Card(
-        child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: SizedBox(
-        width: width - 30,
-        child: Row(
-          children: [
-            Image.asset(
-              widget.imagePath,
-              width: width / 5.5,
-            ),
-            SizedBox(
-              width: width / 1.8,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    widget.menu,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+    return InkWell(
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => OrderDetails(),));
+      },
+      child: Card(
+          child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SizedBox(
+          width: width - 30,
+          child: Row(
+            children: [
+              Image.asset(
+                widget.imagePath,
+                width: width / 5.5,
+              ),
+              SizedBox(
+                width: width / 1.8,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      widget.menu,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Text(
-                    widget.restaurant,
-                    style: const TextStyle(color: Colors.grey, fontSize: 18),
-                  )
-                ],
+                    Text(
+                      widget.restaurant,
+                      style: const TextStyle(color: Colors.grey, fontSize: 18),
+                    )
+                  ],
+                ),
               ),
-            ),
-            SizedBox(
-                child: Text(
-              widget.price,
-              style: TextStyle(
-                color: ThemeColors().success,
-                fontSize: 24,
-              ),
-            ))
-          ],
+              SizedBox(
+                  child: Text(
+                widget.price,
+                style: TextStyle(
+                  color: ThemeColors().success,
+                  fontSize: 24,
+                ),
+              ))
+            ],
+          ),
         ),
-      ),
-    ));
+      )),
+    );
   }
 }

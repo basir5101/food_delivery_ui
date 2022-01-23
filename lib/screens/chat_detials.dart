@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/screens/calling.dart';
 import 'package:food_delivery_app/custom_widgets/input_field.dart';
 import 'package:food_delivery_app/utills/theme_colors.dart';
 
@@ -49,20 +50,25 @@ class _ChatDetailsState extends State<ChatDetails> {
                     ],
                   ),
                   Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                        decoration: BoxDecoration(
-                            color: ThemeColors().primary2,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(200))),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Icon(
-                            Icons.call,
-                            color: ThemeColors().primary,
-                          ),
-                        )),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Dialling(),));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                          decoration: BoxDecoration(
+                              color: ThemeColors().primary2,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(200))),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.call,
+                              color: ThemeColors().primary,
+                            ),
+                          )),
+                    ),
                   )
                 ],
               ),
@@ -92,10 +98,10 @@ class _ChatDetailsState extends State<ChatDetails> {
             Container(
               height: 40,
               color: ThemeColors().primary2,
-              child: Align(
+              child: const Align(
                 alignment: Alignment.topRight,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     'Okay, for what level of spiciness?',
                     style:
@@ -130,10 +136,10 @@ class _ChatDetailsState extends State<ChatDetails> {
             Container(
               height: 40,
               color: ThemeColors().primary2,
-              child: Align(
+              child: const Align(
                 alignment: Alignment.topRight,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     "Okay I'm waiting  👍",
                     style:

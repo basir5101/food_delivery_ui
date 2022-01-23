@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/screens/thanks_meal.dart';
 
 class BrandButton extends StatefulWidget {
   final String btnText;
@@ -29,7 +30,7 @@ class _BrandButtonState extends State<BrandButton> {
         child: ElevatedButton.icon(
           icon: Icon(widget.brandIcon, color: Colors.green, size: 30,),
           onPressed: () {
-           // Navigator.of(context).push(MaterialPageRoute(builder: (context) => widget.route,));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ThanksMeal(),));
           },
 
           style: ElevatedButton.styleFrom(
