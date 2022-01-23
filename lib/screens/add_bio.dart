@@ -11,6 +11,7 @@ class AddBioData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: ThemeButton(btnText: "Next", route: AddPaymentMethod()),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
@@ -23,7 +24,7 @@ class AddBioData extends StatelessWidget {
             InputField(hintText: 'First Name', prefixIcon: Icons.person),
             InputField(hintText: 'Last Name', prefixIcon: Icons.person_add_alt_1),
             InputField(hintText: 'Mobile Number', prefixIcon: Icons.phone),
-            ThemeButton(btnText: "Next", route: AddPaymentMethod())
+
           ],
         ),
       ),

@@ -15,6 +15,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: ThemeButton(
+        btnText: 'Next',
+        route: SecondHome(),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 50),
@@ -27,10 +31,6 @@ class _HomeState extends State<Home> {
               const ParagraphText(
                 paragraph:
                     'Here You Can find a chef or dish for every taste and color. Enjoy!',
-              ),
-              const ThemeButton(
-                btnText: 'Next',
-                route: SecondHome(),
               ),
             ],
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/custom_widgets/third_heading.dart';
+import 'package:food_delivery_app/screens/order_details.dart';
 
 class RestaurantCard extends StatefulWidget {
   final String imagePath;
@@ -14,21 +15,25 @@ class RestaurantCard extends StatefulWidget {
 class _RestaurantCardState extends State<RestaurantCard> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-
-      child: Container(
-        width: MediaQuery.of(context).size.width/2.3,
-        height: 180,
-        child: Center(
-          child: Column(
-            children: [
-              Image.asset(widget.imagePath, alignment: Alignment.center,),
-              ThirdHeading(heading: widget.heading,),
-              Text(widget.time)
-            ],
+    return InkWell(
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => OrderDetails(),));
+      },
+      child: Card(
+        child: Container(
+          width: MediaQuery.of(context).size.width/2.3,
+          height: 180,
+          child: Center(
+            child: Column(
+              children: [
+                Image.asset(widget.imagePath, alignment: Alignment.center,),
+                ThirdHeading(heading: widget.heading,),
+                Text(widget.time)
+              ],
+            ),
           ),
-        ),
-      )
+        )
+      ),
     );
   }
 }

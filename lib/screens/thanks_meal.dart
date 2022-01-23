@@ -29,7 +29,7 @@ class _ThanksMealState extends State<ThanksMeal> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(1000),
                       image:
-                      DecorationImage(image: AssetImage('assets/menu1.png'), fit: BoxFit.fill),
+                      DecorationImage(image: AssetImage('assets/thanks.png'), fit: BoxFit.fill),
                     ),
                   ),
                 ),

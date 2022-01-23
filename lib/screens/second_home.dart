@@ -11,6 +11,7 @@ class SecondHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const ThemeButton(btnText: "Next", route: Signup()),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 50.0),
@@ -19,7 +20,7 @@ class SecondHome extends StatelessWidget {
               Image.asset('assets/second_home.png'),
               const HeadingText(heading: 'Food Ninja is Where Your Comfort Food Lives'),
               const ParagraphText(paragraph: 'Enjoy a fast and smooth food delivery at your doorstep'),
-              const ThemeButton(btnText: "Next", route: Signup()),
+
             ],
           ),
         ),

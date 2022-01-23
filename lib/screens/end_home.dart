@@ -10,12 +10,13 @@ class EndHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const ThemeButton(btnText: 'Try Order', route: Dashboard()),
       body:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/congrats.png'),
             const HeadingText(heading: "Your Profile Is Ready To Use"),
-            const ThemeButton(btnText: 'Try Order', route: Dashboard()),
+
           ],
         ),
 

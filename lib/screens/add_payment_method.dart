@@ -11,6 +11,7 @@ class AddPaymentMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar:  ThemeButton(btnText: 'Next', route: AddLocation()),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
@@ -25,7 +26,7 @@ class AddPaymentMethod extends StatelessWidget {
             PaymentCard(payment: "Payoneer",paymentIcon: Icons.payment,),
             PaymentCard(payment: "Paypal",paymentIcon: Icons.payment,),
             PaymentCard(payment: "Visa",paymentIcon: Icons.payment,),
-            ThemeButton(btnText: 'Next', route: AddLocation())
+
           ],
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:food_delivery_app/screens/dashboard.dart';
 import 'package:food_delivery_app/screens/dashboard_menu.dart';
 import 'package:food_delivery_app/screens/home.dart';
 import 'package:food_delivery_app/screens/message.dart';
+import 'package:food_delivery_app/screens/order_details.dart';
 import 'package:food_delivery_app/utills/theme_colors.dart';
 
 class BottomMenuBar extends StatefulWidget {
@@ -16,28 +17,14 @@ class _BottomMenuBarState extends State<BottomMenuBar> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static  final List<Widget> _widgetOptions = <Widget>[
-    DashboardMenu(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Message',
-      style: optionStyle,
-    ),
-  ];
+
 
   void _onItemTapped(int index) {
     print( index);
     Navigator.push(
         context,
         MaterialPageRoute(
-        builder: (context) =>  index == 2 ? MessageList() : Dashboard() ));
+        builder: (context) => index == 1 ? OrderDetails() :  index == 2 ? MessageList() : Dashboard() ));
     setState(() {
       _selectedIndex = index;
     });
@@ -52,8 +39,8 @@ class _BottomMenuBarState extends State<BottomMenuBar> {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.business),
-          label: 'Business',
+          icon: Icon(Icons.add_shopping_cart),
+          label: 'Cart',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.message),

@@ -12,6 +12,7 @@ class AddLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const ThemeButton(btnText: 'Next', route: EndHome()),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
@@ -32,11 +33,46 @@ class AddLocation extends StatelessWidget {
                   ],
                 ),
               ),
-              const BrandButton(btnText: "Set Location", brandIcon: Icons.location_on),
+            Padding(
+              padding: const EdgeInsets.only(top: 15.0, right: 10, left: 10),
+              child: Container(
+
+                decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+
+                    gradient: LinearGradient(
+                        colors: [
+                          Colors.white70,
+                          Colors.white30
+                        ]
+                    )
+                ),
+                child: ElevatedButton.icon(
+                  icon: Icon(Icons.location_on, color: Colors.green, size: 30,),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => EndHome(),));
+                  },
+
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    onSurface: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    padding: const EdgeInsets.only(left: 24, right: 24, bottom: 10, top: 10),
+                    textStyle: const TextStyle(
+                        fontSize: 18
+                    ),
+
+                  ), label: Text('Set Location', style: TextStyle(
+                    color: Colors.black87
+
+                ),),
+                ),
+              ),
+            ),
               const SizedBox(
                 height: 100,
               ),
-              const ThemeButton(btnText: 'Next', route: EndHome())
+
             ],
           ),
         ),
