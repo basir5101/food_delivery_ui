@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/screens/about_me.dart';
 import 'package:food_delivery_app/screens/dashboard.dart';
 import 'package:food_delivery_app/screens/dashboard_menu.dart';
 import 'package:food_delivery_app/screens/home.dart';
@@ -20,38 +21,43 @@ class _BottomMenuBarState extends State<BottomMenuBar> {
 
 
   void _onItemTapped(int index) {
-    print( index);
+    print(index);
     Navigator.push(
         context,
         MaterialPageRoute(
-        builder: (context) => index == 1 ? OrderDetails() :  index == 2 ? MessageList() : Dashboard() ));
+        builder: (context) => index == 1 ? OrderDetails() :  index == 2 ? MessageList() :index == 3 ? AboutMe() : Dashboard() ));
     setState(() {
       _selectedIndex = index;
     });
   }
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      //selectedIconTheme: IconThemeData(color: ThemeColors().primary),
+    return  BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
+          backgroundColor: Colors.black87,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.add_shopping_cart),
-          label: 'Cart',
+          label: 'Business',
+          backgroundColor: Colors.green,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.message),
-          label: 'Message',
+          label: 'School',
+          backgroundColor: Colors.purple,
         ),
-
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: 'Settings',
+          backgroundColor: Colors.pink,
+        ),
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: ThemeColors().primary,
+      selectedItemColor: Colors.amber[800],
       onTap: _onItemTapped,
-     // onTap: Navigator.push(context,  context=> Home()),
     );
   }
 }
